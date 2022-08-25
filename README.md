@@ -1,2 +1,9 @@
-# latex-tutorial
-LaTeX講習会資料
+# LaTeX講習会資料
+
+## メモ
+
+### コンパイル方法
+
+```
+$ latexmk
+```
