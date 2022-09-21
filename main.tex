@@ -3,8 +3,8 @@
 \input{preamble.tex}
 
 \title{\LaTeX 講習会}
-\author{西岡　辰磨}
-\date{2020年9月24日}
+\author{森脇　可奈}
+\date{2022年9月29日}
 \medskip
 \subtitle{物理学科内定者向けガイダンス}
 
@@ -19,6 +19,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 \titlepage
+\centering
+\footnotesize{講習会の HP \url{https://www.phys.s.u-tokyo.ac.jp/about/35200/} から\\「当日課題」をダウンロードしてください。パスワードは「\textcolor{magenta}{kadai2022}」です。}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -32,7 +35,7 @@
     \item \textcolor{teal}{目標}：当日課題の1ページ目を自分で再現する
     \begin{figure}
         \centering
-        \includegraphics[width=5cm]{fig_kadai.pdf}
+        \includegraphics[width=8cm]{fig_kadai.pdf}
     \end{figure}
 \end{itemize}
 \end{frame}
@@ -66,8 +69,8 @@
     
     \item 左のファイル一覧に「latexmkrc」が現れるので選択し、以下の通り入力する
     \begin{minted}[frame=single]{bash}
-    $latex      = 'platex';
-    $bibtex     = 'pbibtex';
+    $latex      = 'uplatex';
+    $bibtex     = 'uplatex';
     $dvipdf     = 'dvipdfmx %O -o %D %S';
     $makeindex  = 'mendex %O -o %D %S';
     $pdf_mode   = 3;
@@ -185,7 +188,7 @@ D \arrow[dr,dashed,"\theta"] \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{簡単な \LaTeX{} の文章}
 \begin{minted}[frame=single]{latex}
-\documentclass[dvipdfmx]{jsarticle}
+\documentclass[uplatex,dvipdfmx]{jsarticle}
 \begin{document}
     吾輩は猫である名前はまだ無い
     %ここはコメントです
@@ -289,7 +292,8 @@ $c = a - b + 1$ とおく
 
 \bigskip
 \item 注1：\keystrokebftt{\$} 記号は常にペアで用いて、間には\textcolor{magenta}{半角文字}を使う
-\item 注2：\LaTeX{} は\textcolor{blue}{数式中の半角空白を無視}する：
+\item 注2：\keystrokebftt{\$} の代わりに \textbackslash ( と \textbackslash ) で囲んでも良い
+\item 注3：\LaTeX{} は\textcolor{blue}{数式中の半角空白を無視}する：
 
 \medskip
 \begin{exampletwouptiny}
@@ -406,7 +410,7 @@ $\Omega = \sum_{k=1}^{n} \omega_k$
 \medskip
 \item 例：\bftt{amsmath} パッケージの場合
 \begin{minted}[fontsize=\small,frame=single]{latex}
-\documentclass{article}
+\documentclass[uplatex,dvipdfmx]{jsarticle}
 \usepackage{amsmath} % ここがプリアンブル
 \begin{document}
 % これで amsmath パッケージの機能が使える
@@ -479,7 +483,7 @@ c & d \\
 \item 図を入れるには，プリアンブルに
 
 \begin{minted}[fontsize=\small,frame=single]{latex}
-\usepackage[dvipdfmx]{graphicx}
+\usepackage{graphicx}
 \end{minted}
 
 を付け加え，図を入れたい箇所に
@@ -523,14 +527,14 @@ c & d \\
 \item \bftt{jsarticle} クラスを使って日本語レポートを作成する
 
 \begin{minted}[fontsize=\small,frame=single]{latex}
-\documentclass[dvipdfmx]{jsarticle}
+\documentclass[uplatex,dvipdfmx]{jsarticle}
 
 \usepackage{amsmath,amssymb}
 \usepackage{bm}  %太字を出すパッケージ
 
 \title{タイトル} %\LaTeX 講習会レポート
 \author{名前}    %名前+学籍番号
-\date{日付}      %2020年9月24日
+\date{日付}      %2022年9月29日
 
 \begin{document}
 \maketitle       %タイトルを表示
@@ -573,6 +577,8 @@ c & d \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{参考文献}
 \begin{itemize}
+    \item 計算機実験ハンドブック:\\
+    \url{https://github.com/utphys-comp/handbook/releases}
     \item Learn \LaTeX{} in 30 minutes:\\
     \url{https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes}
     \item Free online introduction to \LaTeX (part 1): \url{https://www.overleaf.com/learn/latex/Free_online_introduction_to_LaTeX_(part_1)}

@@ -5,5 +5,5 @@
 ### コンパイル方法
 
 ```
-$ latexmk
+$ ptex2pdf -l -ot "-synctex=1 -file-line-error -shell-escape" main.tex
 ```
