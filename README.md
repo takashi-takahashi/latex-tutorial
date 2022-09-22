@@ -5,7 +5,7 @@
 ### コンパイル方法
 
 ```
-$ latexmk main.tex
+$ latexmk
 ```
 もしくは
 ```

@@ -1,7 +1,7 @@
 @default_files = ('main.tex');
 $latex        = 'platex -synctex=1 -shell-escape -halt-on-error';
 $latex_silent = 'platex -synctex=1 -shell-escape -halt-on-error -interaction=batchmode';
-$bibtex = 'platex';
+$bibtex = 'pbiblatex';
 $dvipdf = 'dvipdfmx %O -o %D %S';
 $makeindex = 'mendex %O -o %D %S';
 $pdf_mode = 3;
